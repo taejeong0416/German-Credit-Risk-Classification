@@ -4,17 +4,6 @@ import joblib
 from pathlib import Path
 from sklearn.pipeline import Pipeline
 
-import platform, sklearn, numpy as np, pandas as pd, scipy, joblib, streamlit as st
-
-st.sidebar.header("Runtime")
-st.sidebar.write({
-    "python": platform.python_version(),
-    "sklearn": sklearn.__version__,
-    "numpy": np.__version__,
-    "scipy": scipy.__version__,
-    "pandas": pd.__version__,
-    "joblib": joblib.__version__,
-})
 
 st.set_page_config(page_title="Credit Risk Prediction")
 
