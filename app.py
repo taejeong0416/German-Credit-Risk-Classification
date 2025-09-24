@@ -1,3 +1,25 @@
+# --- runtime diagnostics (print BEFORE loading model) ---
+import sys, os, platform
+try:
+    import sklearn, numpy as np, scipy as sp, pandas, joblib  # import만으로는 안전
+    RUNTIME = {
+        "python": platform.python_version(),
+        "sklearn": sklearn.__version__,
+        "numpy": np.__version__,
+        "scipy": sp.__version__,
+        "pandas": pandas.__version__,
+        "joblib": joblib.__version__,
+        "cwd": os.getcwd(),
+    }
+except Exception as _e:
+    RUNTIME = {"import_error": repr(_e)}
+
+st.sidebar.header("Runtime")
+for k, v in RUNTIME.items():
+    st.sidebar.write(f"{k}: {v}")
+# --------------------------------------------------------
+
+
 import streamlit as st
 import pandas as pd
 import joblib
