@@ -1,4 +1,5 @@
 # --- runtime diagnostics (print BEFORE loading model) ---
+import streamlit as st
 import sys, os, platform
 try:
     import sklearn, numpy as np, scipy as sp, pandas, joblib  # import만으로는 안전
@@ -19,7 +20,7 @@ for k, v in RUNTIME.items():
     st.sidebar.write(f"{k}: {v}")
 # --------------------------------------------------------
 
-import streamlit as st
+
 import pandas as pd
 import joblib
 from pathlib import Path
