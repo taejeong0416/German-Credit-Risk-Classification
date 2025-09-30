@@ -1,3 +1,4 @@
+--only-binary=:all:
 scikit-learn==1.2.2
 numpy==1.26.4
 scipy==1.11.4
